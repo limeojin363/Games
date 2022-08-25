@@ -1,0 +1,38 @@
+.app {
+    display:grid;
+    place-items: center;
+}
+
+.box {
+    text-align: center;
+}
+
+.grid {
+    display:grid;
+    justify-content: center;
+    min-height: 10vh;
+    padding:20px;
+    width:80vw;
+    height:70vh;
+    gap:10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+ 
+.btn {
+    background-color:beige;
+    border: 5px solid black;
+}
+
+.btn:hover {
+    background-color: rgb(243, 243, 169);
+}
+
+.a {
+    animation:a 500ms;
+}
+
+@keyframes a {
+    from {background-color: black;}
+    to {background-color: beige;}
+}

@@ -39,7 +39,6 @@ function Gamepage(props) {
 }
 
 function App() {
-  let [games] = useState(data);
   return (
     <div className="App">
       <header></header>

@@ -1,4 +1,5 @@
-import styles from './Game0.module.css';
+import './App.css';
+import React, {Component} from 'react';
 
 var i;
 var score=0;
@@ -47,34 +48,33 @@ async function memory_show() {
 }
 
 function animation(x) {
-  x.classList.remove(styles.a);
+  x.classList.remove('a');
   void x.offsetWidth;
-  x.classList.add(styles.a);
+  x.classList.add('a');
 }
 
 function Button(props) {
   return (
-  <button className={styles.btn} value={props.value} onClick={function() {
+  <button id='button' value={props.value} onClick={function() {
     if (flag) {user_input(props.value);
       if (flag) {animation(document.querySelectorAll('button')[props.value])}}}}></button>
   )
 }
 
-function Game0() {
+class App extends Component {
+  render() {
     return (
-      <div className={styles.app}>
-        <div className={styles.box}>
-            <div className={styles.grid}>
-                <Button value='0'></Button>
-                <Button value='1'></Button>
-                <Button value='2'></Button>
-                <Button value='3'></Button>
-                <Button value='4'></Button>
-                <Button value='5'></Button>
-                <Button value='6'></Button>
-                <Button value='7'></Button>
-                <Button value='8'></Button>
-            </div>
+      <div className="App">
+        <div className="grid">
+          <Button value='0'></Button>
+          <Button value='1'></Button>
+          <Button value='2'></Button>
+          <Button value='3'></Button>
+          <Button value='4'></Button>
+          <Button value='5'></Button>
+          <Button value='6'></Button>
+          <Button value='7'></Button>
+          <Button value='8'></Button>
         </div>
         <button onClick={function() {
           memory=[]
@@ -86,8 +86,8 @@ function Game0() {
         
       </div>
     );
-  
+  }
 }
 
 
-export default Game0;
+export default App;

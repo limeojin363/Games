@@ -1,0 +1,30 @@
+.grid {
+    padding:20px;
+    display:grid;
+    width:60vw;
+    height:60vh;
+    gap:10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+ 
+#button {
+    background-color:beige;
+    border: 5px solid black;
+}
+
+#button:hover {
+    background-color: rgb(243, 243, 169);
+}
+
+
+.a {
+    animation:a 500ms;
+}
+
+
+
+@keyframes a {
+    from {background-color: black;}
+    to {background-color: beige;}
+}
