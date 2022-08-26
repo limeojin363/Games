@@ -1,7 +1,7 @@
 import './App.css';
 import {Col, Container, Row} from 'react-bootstrap';
 import { Routes, Route, Link, Navigate, useNavigate, useParams } from 'react-router-dom';
-import data from './data.js'
+import data from './Gamepage/data.js'
 import { useState } from 'react';
 
 
