@@ -4,12 +4,13 @@ import { Routes, Route, Link, Navigate, useNavigate, useParams } from 'react-rou
 import data from './Gamepage/data.js'
 import { useState } from 'react';
 
-
-
 function Item(props) {
   const navigate = useNavigate();
   return (
-    <Col sm={4} onClick={() => {navigate('/game/'+props.idx)}}>a</Col>
+    <Col sm={4} onClick={() => {navigate('/game/'+props.idx)}}>
+      <h2>Game{props.idx}</h2>
+      <h5>{props.games[props.idx].name}</h5>
+    </Col>
   )
 }
 
@@ -20,7 +21,7 @@ function Items(props) {
       <Row>
         {
           games.map((a,i) => {
-            return (<Item key={i} idx={i}></Item>)
+            return (<Item key={i} idx={i} games={games}></Item>)
           })
         }
       </Row>
@@ -33,7 +34,7 @@ function Gamepage(props) {
   let [games] = useState(data);
   return (
     <>
-    {games[id]}
+    {games[id].content}
     </>
   )
 }
