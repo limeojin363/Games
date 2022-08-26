@@ -2,10 +2,19 @@
   text-align: center;
 }
 
-header, footer {
-  background-color: bisque;
-  height: 30px;
+.navbar {
+  display:flex;
+  justify-content: center;
+  text-align: center;
+  background-attachment: fixed;
+  background-color: black;
 }
+
+.link {
+  color:white;
+  cursor:pointer
+}
+
 
 #wrapper{
   height: auto;

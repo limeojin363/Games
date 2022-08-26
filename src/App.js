@@ -1,5 +1,5 @@
 import './App.css';
-import {Col, Container, Row} from 'react-bootstrap';
+import {Col, Container, Row, Navbar} from 'react-bootstrap';
 import { Routes, Route, Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import data from './Gamepage/data.js'
 import { useState } from 'react';
@@ -17,6 +17,7 @@ function Item(props) {
 function Items(props) {
   let [games] = useState(data);
   return (
+    
     <Container>
       <Row>
         {
@@ -40,9 +41,12 @@ function Gamepage(props) {
 }
 
 function App() {
+  const navigate = useNavigate();
   return (
     <div className="App">
-      <header></header>
+        <div className='navbar'>
+          <span className='link' onClick={()=>{navigate('/')}}>HOME</span>
+        </div>
         <div id='wrapper'>
           <Routes>
             <Route path = '/' element={<Items></Items>}></Route>
@@ -50,7 +54,6 @@ function App() {
           </Routes>
         
         </div>
-      <footer></footer>
     </div>
   );  
 }
