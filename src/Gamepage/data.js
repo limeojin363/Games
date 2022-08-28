@@ -10,6 +10,7 @@ let data = [
         content : <Game0></Game0> 
     },
     {
+        name : "Number Baseball",
         content : <Game1></Game1>
     },
     {

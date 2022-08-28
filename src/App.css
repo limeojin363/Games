@@ -12,9 +12,9 @@
 }
 
 .navbar {
-  display:flex;
-  justify-content: center;
-  background-attachment: fixed;
+  display:grid;
+  place-items: center;
+  min-height: 15vh;
   background-color: black;
 }
 
@@ -37,6 +37,7 @@
 }
 
 .homelink {
+  min-width: 100vw;
   color:white;
   cursor:pointer;
   font-size: 30px;
@@ -44,9 +45,9 @@
 
 
 #wrapper{
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 30px;
+  display:grid;
+  place-items: center;
+  min-height: 85vh;
 }
 
 footer{
