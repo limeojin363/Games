@@ -2,14 +2,16 @@ import './App.css';
 import {Col, Container, Row, Navbar} from 'react-bootstrap';
 import { Routes, Route, Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import data from './Gamepage/data.js'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Item(props) {
   const navigate = useNavigate();
   return (
-    <Col sm={4} onClick={() => {navigate('/game/'+props.idx)}}>
-      <h2>Game{props.idx}</h2>
-      <h5>{props.games[props.idx].name}</h5>
+    <Col sm={4} className='Item'>
+      <span className='ItemInside' onClick={() => {navigate('/game/'+props.idx)}}>
+        <h2>Game{props.idx}</h2>
+        <h5>{props.games[props.idx].name}</h5>
+      </span>  
     </Col>
   )
 }
@@ -18,7 +20,7 @@ function Items(props) {
   let [games] = useState(data);
   return (
     
-    <Container>
+    <Container className='Items'>
       <Row>
         {
           games.map((a,i) => {
@@ -42,10 +44,18 @@ function Gamepage(props) {
 
 function App() {
   const navigate = useNavigate();
+  let [fade, setFade] = useState('');
+  useEffect(()=> {
+    let a = setTimeout( ()=> { setFade('end') }, 100)
+    return()=> {
+      setFade('')
+      clearTimeout(a);
+    }
+  },[])
   return (
-    <div className="App">
+    <div className={"App start " + fade}>
         <div className='navbar'>
-          <span className='link' onClick={()=>{navigate('/')}}>HOME</span>
+          <span className='homelink' onClick={()=>{navigate('/')}}>HOME</span>
         </div>
         <div id='wrapper'>
           <Routes>

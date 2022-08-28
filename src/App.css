@@ -2,17 +2,44 @@
   text-align: center;
 }
 
+.start {
+  opacity: 0;
+}
+
+.end {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
 .navbar {
   display:flex;
   justify-content: center;
-  text-align: center;
   background-attachment: fixed;
   background-color: black;
 }
 
-.link {
+.Items {
+  padding : 5px;
+}
+
+.Item {
+  box-shadow: 
+    2px 0 0 0 #888, 
+    0 2px 0 0 #888, 
+    2px 2px 0 0 #888,   /* Just to fix the corner */
+    2px 0 0 0 #888 inset, 
+    0 2px 0 0 #888 inset;
+}
+
+.ItemInside {
+  display:inline-block;
+  cursor:pointer;
+}
+
+.homelink {
   color:white;
-  cursor:pointer
+  cursor:pointer;
+  font-size: 30px;
 }
 
 
