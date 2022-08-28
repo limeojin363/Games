@@ -6,29 +6,34 @@
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-width: 80vw;
+    min-width: 100vw;
+    grid-template-columns: 3fr 1fr;
 }
 
 .item {
-    background-color:aqua;
-    cursor: pointer;
-    height: 80vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    height: 85vh;
+    padding:15px;
     box-shadow: 
     2px 0 0 0 #888, 
     0 2px 0 0 #888, 
     2px 2px 0 0 #888,   /* Just to fix the corner */
     2px 0 0 0 #888 inset, 
     0 2px 0 0 #888 inset;
-
 }
 
-.iteminside {
-    background-color: aquamarine;
-    height: 5vh;
+.left {
+    display:grid;
+    place-items: center;
+    background-color: rgba(215, 215, 215, 0.281);
+}
 
 
+.record {
+    background-color: rgb(215, 215, 215);
+}
+
+input {
+    box-shadow: none;
+    text-align: center;
+    margin:5px;
 }
