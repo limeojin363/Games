@@ -11,7 +11,6 @@
 }
 
 .item {
-    height: 85vh;
     padding:15px;
     box-shadow: 
     2px 0 0 0 #888, 
@@ -22,11 +21,15 @@
 }
 
 .left {
+    height: 85vh;
     display:grid;
     place-items: center;
     background-color: rgba(215, 215, 215, 0.281);
 }
 
+.res {
+    height: 0vh;
+}
 
 .record {
     background-color: rgb(215, 215, 215);
