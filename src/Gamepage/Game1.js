@@ -24,6 +24,7 @@ console.log(ans);
 function Game1() {
     let [userInput, setUserInput] = useState(['','','']);
     let [res,setRes] = useState([]);
+    let [btnAble, setBtnAble] = useState(true);
     return (
         <div className={styles.game1}>
             <div className={styles.container}>
@@ -34,22 +35,22 @@ function Game1() {
                                 let copy = [...userInput];
                                 copy[0] = e.target.value
                                 setUserInput(copy);
-                                console.log(userInput);
                                 }}>
                             </input>
-                            <input onChange={(e)=>{
+                            <input value = {userInput[1]} onChange={(e)=>{
                                 let copy = [...userInput];
                                 copy[1] = e.target.value
                                 setUserInput(copy);
                                 }}>
                             </input>
-                            <input onChange={(e)=>{
+                            <input value = {userInput[2]} onChange={(e)=>{
                                 let copy = [...userInput];
                                 copy[2] = e.target.value
                                 setUserInput(copy);
                                 }}>
                             </input>
                             <button onClick={()=>{
+                                if (!btnAble) return;
                                 let v1 = userInput[0];
                                 let v2 = userInput[1];
                                 let v3 = userInput[2];
@@ -69,7 +70,11 @@ function Game1() {
                                 let copy = [...res];
                                 copy.push([[v1,v2,v3],[sCnt,bCnt]]);
                                 setRes(copy);
-                                if (sCnt==3) alert("That's right")
+                                if (sCnt==3) {
+                                    alert("That's right")
+                                    setBtnAble('false');
+                                }
+                                setUserInput(['','',''])
                             }}>제출</button>
 
                         </div>
@@ -89,6 +94,7 @@ function Game1() {
                     <h5 className={styles.record}></h5>Record  <button onClick={()=>{
                     setRes([])
                     setUserInput(['','',''])
+                    setBtnAble(true);
                     }}>Game Reset</button>
                     {
                         res.map((a,i)=>{
