@@ -1,6 +1,7 @@
 import { useState, ReactDOM} from 'react';
 import styles from './Game1.module.css'
 
+// 접미사 붙여서 ordinal number로 만들어주는 함수
 function ordinal_suffix_of(i) {
     var j = i % 10,
         k = i % 100;
